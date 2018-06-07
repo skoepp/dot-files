@@ -1,24 +1,4 @@
-# ------------------------------------------------------------------
-# JRE
-# ------------------------------------------------------------------
-export JRE_HOME=/usr/java/jdk1.8.0_74
-export JAVA_HOME=/usr/java/jdk1.8.0_74
-
-# ------------------------------------------------------------------
-# MAVEN
-# ------------------------------------------------------------------
-export M2_HOME=/opt/etc/maven-mobile
-export MAVEN_HOME=/opt/etc/maven-mobile
-#export MAVEN_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=1024m -XX:MaxPermSize=1024m"
-export MAVEN_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=1024m"
-
-# ------------------------------------------------------------------
-# mvn
-# ------------------------------------------------------------------
-export NVM_DIR="/home/skoepp/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# ------------------------------------------------------------------
-# Path
-# ------------------------------------------------------------------
-export PATH=$MAVEN_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+# here's LS_COLORS
+# github.com/trapd00r/LS_COLORS
+command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
+eval "$(gdircolors -b ~/.dircolors)"

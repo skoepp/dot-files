@@ -1,6 +1,3 @@
-###
-# Upgrade `ls`
-
 # use coreutils `ls` if possible…
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
@@ -11,16 +8,8 @@ export CLICOLOR_FORCE=1
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
 alias ls='gls -lAFh ${colorflag} --group-directories-first'
 alias lsd='ls -l | grep "^d"' # only directories
-#    `la` defined in .functions
-###
 
-###
-# Connect to Integra via sshuttle
-alias prod='sshuttle -H --dns -r skoepp@login.corp.mobile.de 10.38.0.0/16 10.46.0.0/16 10.47.0.0/16'
-alias i214='sshuttle -H --dns -r skoepp@10.44.214.191 10.44.0.0/16'
-alias i215='sshuttle -H --dns -r skoepp@10.44.215.191 10.44.0.0/16'
-alias i217='sshuttle -H --dns -r skoepp@10.44.217.191 10.44.0.0/16'
-alias i224='sshuttle -H --dns -r skoepp@10.44.224.191 10.44.0.0/16'
-alias i229='sshuttle -H --dns -r skoepp@10.44.229.191 10.44.0.0/16'
-###
-
+# Update installed Homebrew, npm, and their installed packages
+if type brew > /dev/null 2>&1; then alias brew_update="brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup;brew prune; brew doctor;"; fi;
+if type npm-check > /dev/null 2>&1; then alias npm_update_global="npm-check -g -u"; fi;
+if type gem > /dev/null 2>&1; then alias gem_update="sudo gem update --system"; fi;

@@ -1,0 +1,16 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# node modules folder
+node_modules
+
+# bower components folder
+bower_components
+
+# Compiled Python files
+*.pyc
