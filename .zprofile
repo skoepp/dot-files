@@ -11,9 +11,6 @@ for file in ~/.{extra,exports,aliases}; do
 done
 unset file
 
-# z from github.com/rupa/z
-source ~/code/z/z.sh
-
 # User specific environment and startup programs
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH
