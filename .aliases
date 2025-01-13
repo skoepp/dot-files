@@ -5,11 +5,15 @@ hash gls >/dev/null 2>&1 || alias gls="ls"
 if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
 export CLICOLOR_FORCE=1
 
-# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+# ls options: 
+#     A = include hidden (but not . or ..), 
+#     F = put `/` after folders, 
+#     h = byte unit suffixes
 alias ls='gls -lAFh ${colorflag} --group-directories-first'
-alias lsd='ls -l | grep "^d"' # only directories
+#     only directories
+alias lsd='ls -l | grep "^d"'
 
 # Update installed Homebrew, npm, and their installed packages
-if type brew > /dev/null 2>&1; then alias brew_update="brew -v update; brew upgrade --cleanup; brew cleanup; brew cask cleanup;brew prune; brew doctor;"; fi;
+if type brew > /dev/null 2>&1; then alias brew_update="brew -v update; brew upgrade; brew cleanup; brew doctor;"; fi;
 if type npm-check > /dev/null 2>&1; then alias npm_update_global="npm-check -g -u"; fi;
 if type gem > /dev/null 2>&1; then alias gem_update="sudo gem update --system"; fi;
